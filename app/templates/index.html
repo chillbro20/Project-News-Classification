@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+    body{
+        background-color: rgb(37, 40, 34);
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto ">
+            <div class="card" style="background-color:#f7f5f5d0 ;">
+                <div class="card-body my-5">
+                    <div class="card-title">
+                        <h1 class="text-center display-1" style="font-family: arial;">NEWS CATEGORY CLASSIFICATION</h1>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form>
+                        <fieldset >
+                          <div class="mb-3" style="font-size: 20px;">
+                            <label for="newsc" class="newsc">News Content</label>
+                            <textarea id="newsc" name="newsc" class="form-control" rows="10" placeholder="Enter the text here" cols="60"></textarea>
+                          </div>
+                        </fieldset>
+                    </form>       
+                </div>
+            </div >
+            <div class="my-3">
+                <button type="Predict" class="btn btn-primary">Predict</button>
+            </div>        
+        </div> 
+    </div>           
+</div>
+{% endblock %}
