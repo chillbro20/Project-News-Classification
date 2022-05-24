@@ -3,6 +3,12 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from hashlib import md5
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
+from app import login
+
+def get_user(user_id):
+    user = User.query.filter_by(id=user_id).first()
+    return user
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,5 +32,6 @@ class User(db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)   
 
+@login.user_loader
 def load_user(id):
     return User.query.get(int(id))
