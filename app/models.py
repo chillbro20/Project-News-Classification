@@ -32,6 +32,19 @@ class User(db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)   
 
+class NewsPrediction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String)
+    created_on = db.Column(db.DateTime, index=True, default=datetime.now)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', backref=db.backref('news_predictions', lazy='dynamic'))
+    prediction = db.Column(db.String)
+    
+    def __repr__(self):
+        return f'NewsPrediction {self.text} is of category : {self.prediction}'
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for,session
 from flask_login import logout_user, current_user, login_user, login_required
 from requests import Session
-from app.models import User
+from app.models import User, NewsPrediction
 from app import app,db
 import re
 import pandas as pd
@@ -22,19 +22,26 @@ from xgboost import XGBClassifier
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
 from sklearn.feature_extraction.text import TfidfVectorizer
 from joblib import load
+from app.prediction import make_predict,clean_text
 
 
-def load_model():
-    filepath = 'models.pk'
-    return load(filepath)
 
 @app.route('/',methods=['GET', 'POST'])
 def index():
+    
+    if request.method == "POST":
+        news = request.form.get('news')
+        print(news)
+        if news:
+            prediction = str(make_predict(news)[0])
+            session['last_prediction'] = prediction
+            session['last_news'] = news
+            db.session.add(NewsPrediction(text=news,prediction=prediction,user_id=session['id']))
+            db.session.commit()
+            flash('Prediction: {}'.format(prediction))
+            return redirect(url_for('index'))
     if 'is_auth' in session and session['is_auth']:
         return render_template('index.html')
     return redirect('/login')
@@ -108,7 +115,25 @@ def register():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    if 'is_auth' in session and not session['is_auth']:
+        return redirect(url_for('login'))
+    news = NewsPrediction.query.all()
+    return render_template('dashboard.html', news=news)
+
+@app.route('/news/<int:id>/delete')
+def delete_news(id):
+    if 'is_auth' in session and not session['is_auth']:
+        return redirect(url_for('login'))
+    news = NewsPrediction.query.get_or_404(id)
+    db.session.delete(news)
+    db.session.commit()
+    if 'last_news' in session and session['last_news'] == news.text:
+        session.pop('last_news')
+    if 'last_prediction' in session and session['last_prediction'] == news.prediction:
+        session.pop('last_prediction')
+    flash('News deleted successfully','success')
+    return redirect(url_for('dashboard'))
+
 
 @app.route('/about')
 def about():

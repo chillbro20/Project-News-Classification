@@ -2,7 +2,7 @@
 
 {% block css %}
 <style>
-    body{
+    body {
         background-image: url('/static/images/bg2.jpeg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -12,7 +12,36 @@
 
 
 {% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <h1 class="text-center">News Prediction Dashboard</h1>
+        </div>
+        <div class="col-md-8 mx-auto table-responsive bg-white">
+            <table class="table table-hovered table-borderd table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
 
+                        <th>Predicted Category</th>
+                        <th>News</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in news %}
+                    <tr>
+                        <th scope="row">{{row.id}}</th>
+
+                        <td>{{row.prediction}}</td>
+                        <td>{{row.text}}</td>
+                        <td><a href="/news/{{row.id}}/delete" class="btn btn-danger btn-sm">Delete Entry</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 {% endblock %}
-
-
