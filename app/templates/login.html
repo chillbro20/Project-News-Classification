@@ -2,9 +2,9 @@
 
 {% block css %}
 <style>
-  body{
+  body {
     background-image: url('https://wallpaperaccess.com/full/1558365.jpg');
-    background-repeat:no repeat;
+    background-repeat: no repeat;
     background-size: cover;
     background-color: rgb(0, 0, 0);
   }
@@ -19,29 +19,32 @@
       <div class="card shadow-lg border-0">
 
         <div class="card-body">
-          <h3 class="card-title">Fill in your credentials</h3>  
+          <h3 class="card-title">Fill in your credentials</h3>
           <form method="post">
             <div class="form-group mb-3">
               <label for="username">username</label>
               <div class="input-group">
-                <input type="username" class="form-control" name="username" id="username" aria-describedby="usernameHelpId" placeholder="Enter UserID">
+                <input type="username" class="form-control" name="username" id="username"
+                  aria-describedby="usernameHelpId" placeholder="Enter UserID">
               </div>
               <small id="usernameHelpId" class="form-text text-muted">enter registered username</small>
             </div>
             <div class="form-group mb-3">
               <label for="password">Password</label>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" name="password" id="password" aria-describedby="password" placeholder="Enter Password">
+                <input type="password" class="form-control" name="password" id="password" aria-describedby="password"
+                  placeholder="Enter Password">
               </div>
             </div>
-            <button class="btn btn-outline-danger mb-3">Submit <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
-           </form>
+            <button class="btn btn-outline-danger mb-3">Submit <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </form>
         </div>
         <div class="card-footer bg-danger">
           <h4 class="text-white">Need an account</h4>
-          
+
           <p class="card-text text-white">
-            It's free to join and easy to use. Continue on to create your account and get to use this awesome project.  
+            It's free to join and easy to use. Continue on to create your account and get to use this awesome project.
           </p>
           <a class="btn btn-outline-light" href="/register">Join Free</a>
         </div>
