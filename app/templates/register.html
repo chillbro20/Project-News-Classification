@@ -2,7 +2,7 @@
 
 {% block css %}
 <style>
-  body{
+  body {
     background-image: url(https://wallpaperaccess.com/full/1558276.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,10 +17,10 @@
 <div class="container">
   <div class="row justify-items-center">
     <div class="col-md-6 mt-1 mx-auto">
-        {% include "notify.html" %}
+      {% include "notify.html" %}
       <div class="card shadow-lg border-0">
         <div class="card-header">
-          <h3 class="display-4"><i class="fas fa-user-shield text-primary"></i>  Sign up Free </h3>
+          <h3 class="display-4"><i class="fas fa-user-shield text-primary"></i> Sign up Free </h3>
         </div>
         <div class="card-body">
           <h3 class="card-title">Fill in your credentials</h3>
@@ -29,44 +29,54 @@
               <label for="email">Email Address</label>
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon1"><i class="fas fa-envelope text-white"></i></span>
+                  <span class="input-group-text bg-primary" id="basic-addon1"><i
+                      class="fas fa-envelope text-white"></i></span>
                 </div>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="Enter your email">
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
+                  placeholder="Enter your email">
               </div>
               <small id="emailHelpId" class="form-text text-muted">enter valid email address for verification</small>
             </div>
             <div class="form-group">
-                <label for="username">username</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-primary" id="basic-addon2"><i class="fas fa-user text-white"></i></span>
-                  </div>
-                  <input type="username" class="form-control" name="username" id="username" aria-describedby="usernameHelpId" placeholder="Enter UserID">
+              <label for="username">username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-primary" id="basic-addon2"><i
+                      class="fas fa-user text-white"></i></span>
                 </div>
-                <small id="usernameHelpId" class="form-text text-muted">enter alphabets only</small>
+                <input type="username" class="form-control" name="username" id="username"
+                  aria-describedby="usernameHelpId" placeholder="Enter UserID">
               </div>
+              <small id="usernameHelpId" class="form-text text-muted">enter alphabets only</small>
+            </div>
             <div class="form-group">
               <label for="password">Password</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon3"><i class="fas fa-key text-white"></i></span>
+                  <span class="input-group-text bg-primary" id="basic-addon3"><i
+                      class="fas fa-key text-white"></i></span>
                 </div>
-                <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelpId" placeholder="The password">
+                <input type="password" class="form-control" name="password" id="password"
+                  aria-describedby="passwordHelpId" placeholder="The password">
               </div>
-              <small id="passwordHelpId" class="form-text text-muted">alphnumeric values and special symbols are allowed</small>
+              <small id="passwordHelpId" class="form-text text-muted">alphnumeric values and special symbols are
+                allowed</small>
             </div>
             <div class="form-group">
               <label for="cpassword">Password</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon4"><i class="fas fa-key text-white"></i></span>
+                  <span class="input-group-text bg-primary" id="basic-addon4"><i
+                      class="fas fa-key text-white"></i></span>
                 </div>
-                <input type="password" class="form-control" name="cpassword" id="cpassword" aria-describedby="cpassword" placeholder="confirm password">
+                <input type="password" class="form-control" name="cpassword" id="cpassword" aria-describedby="cpassword"
+                  placeholder="confirm password">
               </div>
               <small id="passwordHelpId" class="form-text text-muted">password must match confirm password</small>
             </div>
-            
-            <button class="btn btn-outline-primary btn-lg btn-block mt-1 mb-1">Create account <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+
+            <button class="btn btn-outline-primary btn-lg btn-block mt-1 mb-1">Create account <i
+                class="fa fa-arrow-right" aria-hidden="true"></i> </button>
           </form>
         </div>
         <div class="card-footer bg-secondary">
