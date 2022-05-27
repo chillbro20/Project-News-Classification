@@ -2,28 +2,31 @@
 
 {% block css %}
 <style>
-    body{
-    background-image: url('/static/images/bg1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    body {
+        background-image: url('/static/images/bg1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-    .col-md-6{
+
+    .col-md-6 {
         color: aliceblue;
         padding-top: 2%;
         padding-left: 12px;
         box-sizing: content-box;
     }
-    .col{
+
+    .col {
         padding-left: 130px;
         padding-top: 120px;
         background-color: rgba(147, 140, 132, 0.733);
-    
+
     }
-    .users{
+
+    .users {
         color: rgb(1, 14, 14);
         padding-left: 110px;
         font-size: 30px;
-        
+
     }
 </style>
 {% endblock %}
@@ -33,26 +36,37 @@
 <div class="container">
     <div class="row" style="padding-top: 20px;">
         <div class="col-md-12">
-            <h1 style="text-align:center;"> NEWS CATEGORY CLASSIFICATION</h1> 
-            <h1 style="text-align:center;"> (Using Ensemble technique)</h1> 
+            <h1 style="text-align:center;"> NEWS CATEGORY CLASSIFICATION</h1>
+            <h1 style="text-align:center;"> (Using Ensemble technique)</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <h2>Introduction</h2>
-            <p>You must have seen the news divided into categories when you go to a news website. Some of the popular categories that you’ll see on almost any news website are tech, entertainment, and sports. If you want to know how to classify news categories using machine learning, this article is for you. In this article, we will walk you through the task of news classification with machine learning using Python.
-            Every news website classifies the news article before publishing it so that every time visitors visit their website can easily click on the type of news that interests them. For example, If someone like to read the latest technology updates, so every time he visit a news website, He click on the technology section. But someone may or may not like to read about technology, he may be interested in politics, business, entertainment, or maybe sports.
-            Currently, the news articles are classified by hand by the content managers of news websites. But to save time, they can also implement a machine learning model on their websites that read the news headline or the content of the news and classifies the category of the news. In the section below, We will take you through how you can train a machine learning model for the task of news classification using the Python programming language.
+            <p>You must have seen the news divided into categories when you go to a news website. Some of the popular
+                categories that you’ll see on almost any news website are tech, entertainment, and sports. If you want
+                to know how to classify news categories using machine learning, this article is for you. In this
+                article, we will walk you through the task of news classification with machine learning using Python.
+                Every news website classifies the news article before publishing it so that every time visitors visit
+                their website can easily click on the type of news that interests them. For example, If someone like to
+                read the latest technology updates, so every time he visit a news website, He click on the technology
+                section. But someone may or may not like to read about technology, he may be interested in politics,
+                business, entertainment, or maybe sports.
+                Currently, the news articles are classified by hand by the content managers of news websites. But to
+                save time, they can also implement a machine learning model on their websites that read the news
+                headline or the content of the news and classifies the category of the news. In the section below, We
+                will take you through how you can train a machine learning model for the task of news classification
+                using the Python programming language.
             </p>
         </div>
         <div class="col">
-                <div class="h2">Created By:-</div>
-                <div class="users">Ayush Verma</div>
-                <div class="users">Shikhar Awasthi</div>
-                <div class="users">Saurabh Maurya</div>
+            <div class="h2">Created By:-</div>
+            <div class="users">Ayush Verma</div>
+            <div class="users">Shikhar Awasthi</div>
+            <div class="users">Saurabh Maurya</div>
         </div>
-        
-    </div> 
+
+    </div>
 </div>
-   
+
 {% endblock %}
