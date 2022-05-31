@@ -21,15 +21,17 @@
                 <div class="card-footer">
                     <fieldset>
                         <div class="mb-3" style="font-size: 20px;">
-                            <label for="newsc" class="newsc">News Content</label>
-                            <textarea id="newsc" name="news" class="form-control" rows="10"
-                                placeholder="Enter the text here, " cols="60"></textarea>
+                            <label for="newsc" class="newsc">Put your News headlines here</label>
+                            <textarea id="newsc" name="news" class="form-control" rows="10" placeholder="First news headline
+second headline
+third headline
+etc" cols="60"></textarea>
                         </div>
                     </fieldset>
                 </div>
             </div>
             <div class="my-3">
-                <button type="Predict" class="btn btn-primary">Predict</button>
+                <button type="Predict" class="btn btn-primary btn-block">Predict</button>
             </div>
         </form>
     </div>
@@ -39,9 +41,17 @@
             <div class="card bg-danger">
                 <div class="card-body">
                     <div class="card-title">
-                        <h4 class="text-center text-white">{{session.last_news}} </h4>
+                        <h4 class="text-center text-white">Last news</h4>
+                    </div>
+                    <div class="card-text">
+                        <h4 class="text-center text-white lead">{{session.last_news}} </h4>
                         <p class="text-center text-white">would belong to</p>
-                        <h3 class="text-center text-white display-4">{{session.last_prediction}}</h3>
+                        <h3 class="text-center text-white ">{{session.last_prediction}}</h3>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <a href="/dashboard" class="btn btn-block text-white">Full Results on Dashboard</a>
                     </div>
                 </div>
             </div>

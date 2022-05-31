@@ -33,15 +33,17 @@ def index():
     
     if request.method == "POST":
         news = request.form.get('news')
-        print(news)
         if news:
-            prediction = str(make_predict(news)[0])
-            session['last_prediction'] = prediction
-            session['last_news'] = news
-            db.session.add(NewsPrediction(text=news,prediction=prediction,user_id=session['id']))
+            newslist = news.split('\n')
+            for nx in newslist:
+                prediction = str(make_predict(nx)[0])
+                session['last_prediction'] = prediction
+                session['last_news'] = nx
+                db.session.add(NewsPrediction(text=nx,prediction=prediction,user_id=session['id']))
             db.session.commit()
             flash('Prediction: {}'.format(prediction))
             return redirect(url_for('index'))
+            pass
     if 'is_auth' in session and session['is_auth']:
         return render_template('index.html')
     return redirect('/login')
