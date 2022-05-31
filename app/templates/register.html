@@ -20,7 +20,7 @@
       {% include "notify.html" %}
       <div class="card shadow-lg border-0">
         <div class="card-header">
-          <h3 class="display-4"><i class="fas fa-user-shield text-primary"></i> Sign up Free </h3>
+          <h3 class="display-4"><i class="fas fa-user-shield text-primary"></i> Sign Up </h3>
         </div>
         <div class="card-body">
           <h3 class="card-title">Fill in your credentials</h3>
@@ -29,7 +29,7 @@
               <label for="email">Email Address</label>
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon1"><i
+                  <span class="input-group-text bg-danger" id="basic-addon1"><i
                       class="fas fa-envelope text-white"></i></span>
                 </div>
                 <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
@@ -41,7 +41,7 @@
               <label for="username">username</label>
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon2"><i
+                  <span class="input-group-text bg-danger" id="basic-addon2"><i
                       class="fas fa-user text-white"></i></span>
                 </div>
                 <input type="username" class="form-control" name="username" id="username"
@@ -53,7 +53,7 @@
               <label for="password">Password</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon3"><i
+                  <span class="input-group-text bg-danger" id="basic-addon3"><i
                       class="fas fa-key text-white"></i></span>
                 </div>
                 <input type="password" class="form-control" name="password" id="password"
@@ -66,7 +66,7 @@
               <label for="cpassword">Password</label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text bg-primary" id="basic-addon4"><i
+                  <span class="input-group-text bg-danger" id="basic-addon4"><i
                       class="fas fa-key text-white"></i></span>
                 </div>
                 <input type="password" class="form-control" name="cpassword" id="cpassword" aria-describedby="cpassword"
@@ -75,12 +75,12 @@
               <small id="passwordHelpId" class="form-text text-muted">password must match confirm password</small>
             </div>
 
-            <button class="btn btn-outline-primary btn-lg btn-block mt-1 mb-1">Create account <i
+            <button class="btn btn-outline-danger btn-lg btn-block mt-1 mb-1">Create account <i
                 class="fa fa-arrow-right" aria-hidden="true"></i> </button>
           </form>
         </div>
         <div class="card-footer bg-secondary">
-          <a name="" id="" class="btn btn-primary" href="/login">Already have account</a>
+          <a name="" id="" class="btn btn-danger" href="/login">Already have account</a>
         </div>
       </div>
     </div>
